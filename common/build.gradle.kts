@@ -36,6 +36,8 @@ dependencies {
     implementation("io.insert-koin:koin-android:${property("koin.version")}")
     implementation("io.insert-koin:koin-core:${property("koin.version")}")
 
+    implementation("androidx.compose.runtime:runtime:${property("compose.version")}")
+
     testImplementation("junit:junit:${property("junit.version")}")
     testImplementation("io.mockk:mockk:${property("mockk.version")}")
     testImplementation("io.insert-koin:koin-test:${property("koin.version")}")

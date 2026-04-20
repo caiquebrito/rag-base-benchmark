@@ -1,8 +1,8 @@
 package com.ctb.commonkotlin.result
 
 sealed class Result<out T> {
-    data class Success<T>(val data: T) : Result<T>()
-    data class Failure(val error: Throwable) : Result<Nothing>()
+    public data class Success<T>(val data: T) : Result<T>()
+    public data class Failure(val error: Throwable) : Result<Nothing>()
 
     fun getOrNull(): T? = when (this) {
         is Success -> data

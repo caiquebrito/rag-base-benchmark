@@ -7,9 +7,18 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+    }
+}
+
 dependencies {
+    implementation(project(":commonKotlin"))
     implementation(project(":data"))
     implementation(project(":domain"))
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${property("coroutines.version")}")
 
     implementation("com.squareup.retrofit2:retrofit:${property("retrofit.version")}")
     implementation("com.squareup.retrofit2:converter-gson:${property("retrofit.version")}")

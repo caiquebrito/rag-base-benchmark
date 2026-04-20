@@ -7,9 +7,17 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+    }
+}
+
 dependencies {
     implementation(project(":domain"))
     implementation(project(":commonKotlin"))
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${property("coroutines.version")}")
 
     testImplementation("junit:junit:${property("junit.version")}")
     testImplementation("io.mockk:mockk:${property("mockk.version")}")

@@ -20,7 +20,7 @@ class CheckTakeHomeModules : KoinTest {
         }
 
         try {
-            TakeHomeModule.getAllModules().verify()
+            TakeHomeModule.getAllModules().forEach { it.verify() }
         } finally {
             stopKoin()
         }

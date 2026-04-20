@@ -18,6 +18,8 @@ android {
 
     kotlinOptions {
         jvmTarget = "11"
+        freeCompilerArgs += "-P"
+        freeCompilerArgs += "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=1.9.24"
     }
 
     buildFeatures {
@@ -41,6 +43,8 @@ dependencies {
     implementation("io.insert-koin:koin-android:${property("koin.version")}")
     implementation("io.insert-koin:koin-core:${property("koin.version")}")
     implementation("io.insert-koin:koin-androidx-compose:${property("koin.version")}")
+
+    implementation("com.squareup.okhttp3:okhttp:${property("okhttp.version")}")
 
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:${property("lifecycle.version")}")
 
